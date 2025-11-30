@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Karol Cisneros</title>
+  <meta name="description" content="Sitio personal de Karol Cisneros: desarrolladora frontend y entusiasta de la tecnología.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <h1>Karol Cisneros</h1>
+
+      <nav role="tablist" aria-label="Secciones principales">
+        <button id="tab-perfil" type="button" class="tab-link active" role="tab" aria-selected="true" aria-controls="perfil" data-section-target="perfil">Perfil</button>
+        <button id="tab-trayectoria" type="button" class="tab-link" role="tab" aria-selected="false" aria-controls="trayectoria" data-section-target="trayectoria">Trayectoria</button>
+        <button id="tab-intereses" type="button" class="tab-link" role="tab" aria-selected="false" aria-controls="intereses" data-section-target="intereses">Intereses personales</button>
+        <button id="tab-contacto" type="button" class="tab-link" role="tab" aria-selected="false" aria-controls="contacto" data-section-target="contacto">Contacto</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="perfil" class="panel panel-perfil active" data-section="perfil" role="tabpanel" aria-labelledby="tab-perfil">
+      <h2>Perfil y presentación</h2>
+      <div class="perfil-grid">
+        <div class="card perfil-welcome">
+          <strong>Bienvenida a mi mundo</strong>
+          <p>Aquí va tu <em>foto de perfil</em> y una breve descripción de lo que estás haciendo actualmente (tu rol, proyecto principal, estudio, etc.).</p>
+        </div>
+
+        <div class="perfil-photo">
+          <img src="images/Yo.png" alt="Karol Cisneros" width="100%" height="100%">
+        </div>
+
+        <div class="card perfil-summary">
+          <strong>Resumen actual</strong>
+          <p>Holasakhjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trayectoria" class="panel panel-layout" data-section="trayectoria" role="tabpanel" aria-labelledby="tab-trayectoria" aria-hidden="true">
+      <h2>Trayectoria y fundamentos</h2>
+      <div class="section-layout layout-right-image">
+        <div class="section-text">
+          <div class="card">
+            <strong>Raíces y trayectoria académica</strong>
+            <p>Escribe el lugar donde naciste y tu trayectoria educativa completa (títulos, instituciones, años).</p>
+          </div>
+          <div class="card">
+            <strong>Hitos que definen mi trayectoria</strong>
+            <p>Describe los logros académicos, profesionales o personales más importantes que han marcado tu camino.</p>
+          </div>
+          <div class="card">
+            <strong>Conexiones y comunicación</strong>
+            <p>Anota los idiomas que manejas (con tu nivel) y que estás aprendiendo Lengua de Señas.</p>
+          </div>
+        </div>
+
+        <div class="section-photo">
+          <img src="images/violin.png" alt="Karol Cisneros" width="100%" height="100%">
+        </div>
+      </div>
+    </section>
+
+    <section id="intereses" class="panel panel-layout" data-section="intereses" role="tabpanel" aria-labelledby="tab-intereses" aria-hidden="true">
+      <h2>Intereses personales y desconexión</h2>
+      <div class="section-layout layout-right-image">
+        <div class="section-text">
+          <div class="card">
+            <strong>Tiempo libre y aficiones</strong>
+            <p>Aquí puedes escribir sobre tus hobbies y actividades fuera de lo profesional/académico.</p>
+          </div>
+          <div class="card">
+            <strong>Pequeños placeres y gustos</strong>
+            <p>Describe tus gustos personales: música, libros, cine, juegos, comida favorita, etc.</p>
+          </div>
+        </div>
+
+        <div class="section-photo">
+          <img src="images/arte.png" alt="Karol Cisneros" width="100%" height="100%">
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contacto" class="panel panel-layout" data-section="contacto" role="tabpanel" aria-labelledby="tab-contacto" aria-hidden="true">
+      <h2>Contáctame</h2>
+      <div class="section-layout layout-right-image">
+        <div class="section-text">
+          <form class="card contact-form" action="https://formspree.io/f/mblndeev" method="POST">
+            <strong>Déjame un comentario o pregunta:</strong>
+            
+            <label for="email">Tu Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico..." required>
+    
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tu mensaje va aquí..." required></textarea>
+    
+            <button type="submit" class="submit-button">Enviar Mensaje</button>
+          </form>
+    
+    
+          <div class="card social-links">
+            <strong>Mis Redes Sociales</strong>
+            <p>Conéctate conmigo a través de:</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/josh.cisua/" target="_blank" aria-label="Perfil de Instagram">
+                    <img src="images/Instagram.png" alt="Instagram" class="social-logo">
+                </a>
+                <a href="https://www.facebook.com/josh.cisneros.167704?locale=es_LA" target="_blank" aria-label="Perfil de Facebook">
+                    <img src="images/facebook.png" alt="Facebook" class="social-logo">
+                </a>
+                <a href="https://www.linkedin.com/in/tuperfil" target="_blank" aria-label="Perfil de LinkedIn">
+                    <img src="images/Linkedin.png" alt="LinkedIn" class="social-logo">
+                </a>
+            </div>
+          </div>
+        </div>
+        <div class="section-photo">
+          <img src="images/polito.png" alt="Karol Cisneros" width="100%" height="90%">
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer>
+    © <span id="year"></span> Karol Cisneros. Hecho con ☕ y amor por los gatos.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
