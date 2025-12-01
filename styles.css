@@ -12,7 +12,7 @@
   
   /* ACENTOS (VIBRANTES) */
   --color-accent: #358c58; /* Verde Lima Brillante (Acento Principal) */
-  --color-accent-dark: #F300FF; /* Púrpura Brillante (Acento Secundario/Hover) */
+  --color-accent-dark: #278800; /* Púrpura Brillante (Acento Secundario/Hover) */
   
   --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
@@ -38,9 +38,9 @@
     
     /* GRADIENTES PÚRPURA Y LIMA PARA LAS DIFUMINACIONES */
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(243, 0, 255, 0.4) 0%, transparent 40%), 
+        radial-gradient(circle at 10% 20%, rgba(0, 167, 47, 0.4) 0%, transparent 40%), 
         radial-gradient(circle at 80% 90%, rgba(0, 255, 104, 0.3) 0%, transparent 40%), 
-        linear-gradient(135deg, #F300FF 0%, #00FF68 100%); 
+        linear-gradient(135deg, #008d2a 0%, #00FF68 100%); 
     background-attachment: fixed;
     background-size: cover;
   }
@@ -51,7 +51,7 @@
     padding: 0; 
     
     /* --- ESTILOS DE LA FRANJA AZUL/OSCURA --- */
-    background-color: #1A237E; /* Color base si la imagen no carga (Azul Oscuro) */
+    background-color: #2d6c18; /* Color base si la imagen no carga (Azul Oscuro) */
     color: white; /* Asegura que el texto en la franja sea claro */
     padding-top: 5rem; /* Espacio arriba del hero */
     padding-bottom: 5rem; /* Espacio abajo del hero */
