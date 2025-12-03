@@ -8,13 +8,23 @@
   
   /* TEXTO (DEBE SER OSCURO) */
   --color-text: #1A002A; /* Púrpura Oscuro/Casi Negro (Máxima Legibilidad) */
-  --color-muted: #570075; /* Púrpura Medio (Texto Secundario) */
+  --color-muted: #000000; /* Púrpura Medio (Texto Secundario) */
   
   /* ACENTOS (VIBRANTES) */
   --color-accent: #358c58; /* Verde Lima Brillante (Acento Principal) */
   --color-accent-dark: #278800; /* Púrpura Brillante (Acento Secundario/Hover) */
   
   --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  
+  /* NUEVOS COLORES PARA EL RANKING PERSONAL */
+  --color-empathy: #FF7F50; /* Coral */
+  --color-deconstruct: #9370DB; /* Púrpura */
+  --color-friend: #00BFFF; /* Azul Cielo */
+  --color-inclusive: #3CB371; /* Verde Menta */
+  --color-metro: #FFD700; /* Dorado */
+  --color-agoraphobia: #808080; /* Gris */
+  --color-vegan: #7CFC00; /* Verde Lima */
+  --color-queer: #FF69B4; /* Rosa Caliente */
 }
 
   html {
@@ -38,9 +48,9 @@
     
     /* GRADIENTES PÚRPURA Y LIMA PARA LAS DIFUMINACIONES */
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(0, 167, 47, 0.4) 0%, transparent 40%), 
+        radial-gradient(circle at 10% 20%, rgba(0, 81, 23, 0.93) 0%, transparent 40%), 
         radial-gradient(circle at 80% 90%, rgba(0, 255, 104, 0.3) 0%, transparent 40%), 
-        linear-gradient(135deg, #008d2a 0%, #00FF68 100%); 
+        linear-gradient(135deg, #ffffff 0%, #366641e8 100%); 
     background-attachment: fixed;
     background-size: cover;
   }
@@ -59,7 +69,7 @@
     /* Reemplaza esta propiedad si usas una imagen (URL real de la imagen) */
     /*background-image: linear-gradient(135deg, #1A237E 0%, #0D47A1 100%);
     /* O puedes usar una imagen real de fondo como la de Simón Lunagómez: */
-    background-image: url('images/patron.png'); */
+    background-image: url('images/patron.png'); 
     
     background-size: cover;
     background-position: center;
@@ -90,8 +100,13 @@
 
 /* Título dentro del hero */
 .hero h1 { 
+    /* Modificación: Aumentar el tamaño de la fuente */
+    font-size: 3.5rem; /* El tamaño actual era 2.5rem o menos, lo subimos */
+    font-weight: 900; /* Asegurar que la fuente sea gruesa/negrita */
     color: var(--color-text); /* Púrpura Oscuro */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    /* Modificación: Agregar una sombra de texto sutil para que "salte" */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); 
+    letter-spacing: 0.05em; /* Un poco de espaciado para un look más moderno */
 }
 
 /* Navegación dentro del hero */
@@ -119,7 +134,7 @@
     padding: 0.35rem 1rem;
     border-radius: 999px;
     font-weight: 600;
-    background: rgba(243, 0, 255, 0.12); /* Fondo Púrpura sutil */
+    background: rgba(0, 0, 0, 0.12); /* Fondo Púrpura sutil */
     color: var(--color-accent); /* Texto Verde Lima */
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -188,50 +203,175 @@ nav button {
   /* Layout especial para la sección de Perfil */
   .panel-perfil .perfil-grid {
     display: grid;
+    /* AJUSTE: Quitamos 'ranking' */
     grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto; 
     grid-template-areas:
       "welcome photo"
-      "summary summary";
+      "summary photo"
+      "novelas novelas"; 
     gap: 1.8rem;
     margin-top: 1.8rem;
     align-items: stretch;
   }
 
+  /* --- ESTILOS DE RANKING PERSONAL (Ahora en TRAYECTORIA) --- */
+  
+  .personal-ranking-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid var(--color-accent); 
+  }
+  
+  .personal-ranking-block p {
+    margin-bottom: 1rem;
+  }
+
+  /* Estilos para el ranking de barras (similar al de Trayectoria) */
+  .personal-ranking.skill-bar-container { 
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem; /* Más compacto */
+    margin-top: 0.5rem;
+  }
+  
+  .personal-ranking .skill-item {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr; /* Etiqueta más ancha para descripciones largas */
+      align-items: center;
+      gap: 0.8rem;
+  }
+
+  /* Estilos para las métricas numéricas */
+  .numerical-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    align-items: center;
+  }
+
+  .numerical-item .numerical-value {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+  }
+
+  /* Colores para las barras del Ranking Personal */
+  .skill-level.empathy {
+      background-color: var(--color-empathy);
+      color: white;
+  }
+  .skill-level.deconstruct {
+      background-color: var(--color-deconstruct);
+      color: white;
+  }
+  .skill-level.friend {
+      background-color: var(--color-friend);
+      color: var(--color-text); 
+  }
+  .skill-level.inclusive {
+      background-color: var(--color-inclusive);
+      color: white;
+  }
+  .skill-level.metro {
+      background-color: var(--color-metro);
+      color: var(--color-text); 
+  }
+  .skill-level.agoraphobia {
+      background-color: var(--color-agoraphobia);
+      color: white;
+  }
+  .skill-level.vegan {
+      background-color: var(--color-vegan);
+      color: var(--color-text); 
+  }
+  .skill-level.queer {
+      background-color: var(--color-queer);
+      color: white;
+  }
+  
+  /* ESTILOS DEL BLOQUE DE NOVELAS (Full Width) */
+  .book-recommendation-block {
+    grid-area: novelas; 
+    border: 2px solid var(--color-accent); 
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background: var(--color-section);
+  }
+
+  /* El .full-width-grid ahora solo ayuda a la maquetación */
+  .full-width-grid {
+    grid-column: 1 / -1; 
+  }
+  
+  .book-title-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--color-bg); 
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-weight: 700;
+    text-align: center;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: background-color 0.5s ease;
+  }
+
+  .book-title-message.revealed {
+    background: rgba(0, 255, 104, 0.3); 
+    border: 2px solid var(--color-accent-dark);
+  }
+
+  .submit-button.small-button {
+    padding: 0.75rem 1.25rem;
+    margin-top: 0; 
+    flex-grow: 0; 
+  }
+  /* --- FIN ESTILOS DE RANKING PERSONAL --- */
+
+
   .perfil-welcome {
     grid-area: welcome;
   }
 
-  .photo-block {
-    border-radius: 20px;
-    /* CAMBIO: Usamos el fondo de sección claro, o si quieres que destaque, un color Lima/Púrpura más claro */
-    background: var(--color-section); 
-    border: 1px solid var(--color-accent); /* Borde Lima Brillante */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* CAMBIO: Texto oscuro para legibilidad */
-    color: var(--color-text); 
-    font-size: 0.95rem;
-    font-style: italic;
-  }
-
   .perfil-photo {
     grid-area: photo;
+    /* AJUSTE: Ahora cubre el área de welcome Y summary */
+    grid-row: welcome / summary; 
+  }
+  
+  .perfil-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
   }
 
   .perfil-summary {
     grid-area: summary;
   }
+  
+  .image-gallery-block {
+    /* No necesita grid-area, está fuera del perfil-grid */
+    margin-top: 5rem;
+  }
 
   @media (max-width: 900px) {
     .panel-perfil .perfil-grid {
+      /* Resetear a una columna para móviles */
       grid-template-columns: 1fr;
       grid-template-areas:
         "photo"
         "welcome"
-        "summary";
+        "summary"
+        "novelas"
+        "gallery";
     }
   }
 
@@ -250,7 +390,18 @@ nav button {
 
   .section-photo {
     min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
   }
+  
+  .section-photo img {
+    width: 100%;
+    height: 50%; 
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
 
   .layout-right-image .section-text {
     order: 1;
@@ -282,7 +433,6 @@ nav button {
 
   section p,
   section li {
-    /* Mantenemos el Púrpura Medio para el texto secundario, que es oscuro y legible sobre el fondo claro */
     color: var(--color-muted); 
   }
 
@@ -305,24 +455,23 @@ nav button {
   .card {
     padding: 1.5rem;
     border-radius: 20px;
-    /* CAMBIO: Usamos el color de sección claro para el fondo */
     background: var(--color-section); 
-    border: 1px solid rgba(0, 0, 0, 0.08); /* Borde sutil */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
   }
 
   .card strong {
     display: block;
     margin-bottom: 0.35rem;
-    color: var(--color-text); /* Texto Principal Púrpura Oscuro */
+    color: var(--color-text); 
   }
 
   .card p, .card li {
-    color: var(--color-muted); /* Púrpura Medio, buen contraste sobre fondo claro */
+    color: var(--color-muted); 
   }
 
   .contact-list a {
-    color: var(--color-accent); /* Verde Lima */
+    color: var(--color-accent); 
     text-decoration: none;
     font-weight: 600;
   }
@@ -330,7 +479,7 @@ nav button {
   footer {
     text-align: center;
     padding: 3rem 1.5rem;
-    color: var(--color-muted); /* Púrpura Medio */
+    color: var(--color-muted); 
     font-size: 0.95rem;
   }
 
@@ -356,15 +505,15 @@ nav button {
   font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.3rem;
-  color: var(--color-text); /* Púrpura Oscuro para el label */
+  color: var(--color-text); 
 }
 
 .contact-form input[type="email"],
 .contact-form textarea {
   padding: 0.75rem;
-  border: 1px solid var(--color-muted); /* Borde Púrpura Medio */
+  border: 1px solid var(--color-muted); 
   border-radius: 8px;
-  background: var(--color-bg); /* Fondo de input muy claro */
+  background: var(--color-bg); 
   color: var(--color-text);
   transition: border-color 0.3s;
 }
@@ -372,7 +521,7 @@ nav button {
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--color-accent); /* Borde Verde Lima al enfocar */
+  border-color: var(--color-accent); 
 }
 
 .contact-form textarea {
@@ -387,17 +536,16 @@ nav button {
   cursor: pointer;
   font-weight: 700;
   
-  /* Colores vibrantes para el botón de envío */
-  background-color: var(--color-accent); /* Fondo Verde Lima */
-  color: var(--color-text); /* Texto Púrpura Oscuro */
+  background-color: var(--color-accent); 
+  color: var(--color-text); 
   
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button:hover {
-  background-color: var(--color-accent-dark); /* Fondo Púrpura al hacer hover */
-  color: var(--color-bg); /* Texto claro al hacer hover */
-  transform: translateY(-2px);
+  background-color: var(--color-accent-dark); 
+  color: var(--color-bg); 
+  transform: translateY(-2px); 
 }
 
 
@@ -407,17 +555,367 @@ nav button {
   display: flex;
   gap: 1.5rem;
   margin-top: 1.5rem;
-  justify-content: center; /* Centrar los iconos */
+  justify-content: center; 
 }
 
 .social-logo {
-  width: 48px; /* Tamaño de los logos */
+  width: 48px; 
   height: 48px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
 .social-icons a:hover .social-logo {
-  transform: scale(1.15) rotate(5deg); /* Efecto al hacer hover */
+  transform: scale(1.15) rotate(5deg); 
 }
- 
+
+/* --- ESTILOS AGREGADOS --- */
+
+/* 1. Galería de Imágenes (Perfil) */
+.image-gallery-block {
+  margin-top: 5rem;
+}
+
+.image-gallery {
+  display: grid;
+  /* CAMBIO CLAVE: Forzamos 3 columnas de igual ancho (1fr) */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* Aumentamos el gap entre imágenes */
+  margin-top: 15px;
+}
+
+.gallery-image {
+  width: 100%;
+  /* CAMBIO CLAVE: Aumentamos la altura para hacerlas más visibles */
+  height: 180px; 
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Indicador visual de que es clicable */
+}
+
+.gallery-image:hover {
+    transform: scale(1.02); /* Escala ligeramente al pasar el ratón */
+}
+
+.gallery-caption {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--color-accent);
+}
+
+/* 2. Botón de Spotify (Intereses) */
+.spotify-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background-color: #1DB954; /* Color oficial de Spotify */
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.spotify-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.spotify-button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+
+
+.letterboxd-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.0rem; /* Un poco de espacio debajo del de Spotify */
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background-color: #004d33; /* Verde Oscuro/Oficial de Letterboxd */
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.letterboxd-button:hover {
+    transform: translateY(-2px);
+    background-color: #176f4e; /* Verde más claro al hacer hover */
+}
+
+.letterboxd-button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* 3. Estilos de barras genéricas (usadas por el Ranking Personal) */
+.skill-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-label {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.skill-bar {
+    background-color: rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: width 1s ease-out; 
+    border-radius: 8px 0 0 8px;
+}
+
+/* --- ESTILOS DE RESEÑAS VEGANAS (INTERESES) --- */
+.vegan-review-list {
+    margin-top: 1.5rem;
+    border: 2px solid var(--color-accent);
+    
+    /* Implementar desplazamiento */
+    max-height: 400px; /* Altura máxima fija para la ventana de desplazamiento */
+    overflow-y: scroll; /* Permite desplazamiento vertical cuando el contenido excede la altura máxima */
+    padding-right: 15px; /* Espacio para que la barra de desplazamiento no oculte el contenido */
+}
+
+.vegan-review-list strong {
+    color: var(--color-accent-dark);
+}
+
+.review-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.review-title {
+    font-size: 1.1rem;
+    color: var(--color-text);
+}
+
+.review-meta {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.review-comment {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}
+
+/* --- NUEVO ESTILO: BLOQUE DE OPINIÓN --- */
+.opinion-capsule-block {
+    margin-bottom: 1.8rem;
+    border: 2px solid var(--color-accent-dark); /* Borde oscuro para destacar */
+    text-align: center;
+}
+
+.opinion-capsule-block strong {
+    font-size: 1.25rem;
+}
+
+.opinion-text {
+    margin: 1rem auto 1.5rem;
+    padding: 1rem;
+    background: var(--color-bg); 
+    border-radius: 12px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--color-text);
+    min-height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.opinion-capsule-block .submit-button {
+    margin-top: 0;
+}
+
+
+/* --- LIGHTBOX (Modal de imagen grande) --- */
+.lightbox {
+  display: none; /* Oculto por defecto */
+  position: fixed; 
+  z-index: 100; /* Asegura que esté por encima de todo */
+  padding-top: 50px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); /* Fondo negro semi-transparente */
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh; /* Limita la altura para caber en la pantalla */
+  object-fit: contain; 
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Título/caption */
+#lightbox-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* --- NUEVOS ESTILOS: GATO FLOTANTE (Fixed Position) --- */
+
+.floating-cat {
+    /* Fija el elemento en la ventana del navegador */
+    position: fixed; 
+    /* Coloca el elemento a la izquierda de la ventana */
+    left: 20px; 
+    /* Coloca el elemento en el centro vertical de la ventana (ajustado por transform) */
+    top: 40%;
+    transform: translateY(-50%); 
+    
+    /* Asegura que el gato esté siempre visible */
+    z-index: 90; 
+    /* Tamaño máximo para que no sea demasiado grande */
+    max-width: 300px; 
+    /* Transición sutil al pasar el ratón */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Opcional: Si quieres que el gato se mueva un poco al pasar el ratón */
+    cursor: pointer;
+}
+
+.floating-cat:hover {
+    /* Pequeño efecto de "salto" al pasar el ratón */
+    transform: translateY(-55%) scale(1.05); 
+}
+
+.floating-cat img {
+    /* Asegura que la imagen ocupe todo el contenedor y tenga esquinas suaves */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Opcional: En pantallas muy pequeñas, puedes ocultarlo para ahorrar espacio */
+@media (max-width: 1200px) {
+    .floating-cat {
+        left: 0; /* Lo empuja a la orilla */
+        max-width: 100px; /* Lo hace más pequeño */
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-cat {
+        display: none; /* Ocultar en móviles para mayor legibilidad */
+    }
+}
+
+
+
+/* --- NUEVOS ESTILOS: GATO FLOTANTE (Fixed Position) --- */
+
+.floating-remedios {
+    /* Fija el elemento en la ventana del navegador */
+    position: fixed; 
+    /* Coloca el elemento a la izquierda de la ventana */
+    left: 1500px; 
+    /* Coloca el elemento en el centro vertical de la ventana (ajustado por transform) */
+    top: 70%;
+    transform: translateY(-50%); 
+    
+    /* Asegura que el gato esté siempre visible */
+    z-index: 90; 
+    /* Tamaño máximo para que no sea demasiado grande */
+    max-width: 600px; 
+    /* Transición sutil al pasar el ratón */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Opcional: Si quieres que el gato se mueva un poco al pasar el ratón */
+    cursor: pointer;
+}
+
+.floating-remedios:hover {
+    /* Pequeño efecto de "salto" al pasar el ratón */
+    transform: translateY(-55%) scale(1.05); 
+}
+
+.floating-remedios img {
+    /* Asegura que la imagen ocupe todo el contenedor y tenga esquinas suaves */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Opcional: En pantallas muy pequeñas, puedes ocultarlo para ahorrar espacio */
+@media (max-width: 1200px) {
+    .floating-remedios {
+        left: 0; /* Lo empuja a la orilla */
+        max-width: 100px; /* Lo hace más pequeño */
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-remedios {
+        display: none; /* Ocultar en móviles para mayor legibilidad */
+    }
+}
