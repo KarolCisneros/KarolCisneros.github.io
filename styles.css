@@ -830,7 +830,7 @@ nav button {
     /* Coloca el elemento a la izquierda de la ventana */
     left: 20px; 
     /* Coloca el elemento en el centro vertical de la ventana (ajustado por transform) */
-    top: 40%;
+    top: 25%;
     transform: translateY(-50%); 
     
     /* Asegura que el gato esté siempre visible */
@@ -878,15 +878,15 @@ nav button {
     /* Fija el elemento en la ventana del navegador */
     position: fixed; 
     /* Coloca el elemento a la izquierda de la ventana */
-    left: 1500px; 
+    left: 0px; 
     /* Coloca el elemento en el centro vertical de la ventana (ajustado por transform) */
-    top: 70%;
+    top: 75%;
     transform: translateY(-50%); 
     
     /* Asegura que el gato esté siempre visible */
     z-index: 90; 
     /* Tamaño máximo para que no sea demasiado grande */
-    max-width: 600px; 
+    max-width: 400px; 
     /* Transición sutil al pasar el ratón */
     transition: transform 0.3s ease-in-out;
     
@@ -916,6 +916,54 @@ nav button {
 
 @media (max-width: 768px) {
     .floating-remedios {
+        display: none; /* Ocultar en móviles para mayor legibilidad */
+    }
+}
+
+/* --- NUEVOS ESTILOS: GATO FLOTANTE (Fixed Position) --- */
+
+.floating-remedios3 {
+    /* Fija el elemento en la ventana del navegador */
+    position: fixed; 
+    /* Coloca el elemento a la izquierda de la ventana */
+    left: 1500px; 
+    /* Coloca el elemento en el centro vertical de la ventana (ajustado por transform) */
+    top: 50%;
+    transform: translateY(-50%); 
+    
+    /* Asegura que el gato esté siempre visible */
+    z-index: 90; 
+    /* Tamaño máximo para que no sea demasiado grande */
+    max-width: 300px; 
+    /* Transición sutil al pasar el ratón */
+    transition: transform 0.3s ease-in-out;
+    
+    /* Opcional: Si quieres que el gato se mueva un poco al pasar el ratón */
+    cursor: pointer;
+}
+
+.floating-remedios3:hover {
+    /* Pequeño efecto de "salto" al pasar el ratón */
+    transform: translateY(-55%) scale(1.05); 
+}
+
+.floating-remedios3 img {
+    /* Asegura que la imagen ocupe todo el contenedor y tenga esquinas suaves */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Opcional: En pantallas muy pequeñas, puedes ocultarlo para ahorrar espacio */
+@media (max-width: 1200px) {
+    .floating-remedios3 {
+        left: 0; /* Lo empuja a la orilla */
+        max-width: 100px; /* Lo hace más pequeño */
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-remedios3 {
         display: none; /* Ocultar en móviles para mayor legibilidad */
     }
 }

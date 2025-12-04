@@ -64,7 +64,7 @@ const recommendedBooks = [
     "Como Agua para Chocolate (Laura Esquivel)",
     "Pedro Páramo (Juan Rulfo)",
     "La Insoportable Levedad del Ser (Milan Kundera)",
-    "La Casa de los Espiritus (Isabel Allende)",
+    "La Casa de los Espíritus (Isabel Allende)",
     "El perfume (Patrick Süskind)",
     "1984 (George Orwell)",
     "Fahrenheit 451 (Ray Bradbury)",
@@ -72,7 +72,10 @@ const recommendedBooks = [
     "La Vegetariana (Han Kang)", 
     "Cadáver Exquisito (Agustina Bazterrica)", 
     "Delirio (Laura Restrepo)",
-    "La Naranja Mecánica (ANthony Burgess)"
+    "La Naranja Mecánica (ANthony Burgess)",
+    "El Llano en Llamas (Juan Rulfo)",
+    "Diario de una Pasión (Nocholas Sparks)"
+
 ];
 
 const revealBookTitle = () => {
@@ -108,13 +111,18 @@ const revealOpinionButton = document.getElementById('reveal-opinion');
 const opinionContainer = document.getElementById('opinion-container');
 
 const hotTakes = [
-    "¿Te comerías a tu perro? por qué a una vaca sí? y a un perro que no es tuyo?",
     "Salir de Starbucks debería ser funable",
     "¿Darle cuerpo a la IA?",
     "¿Matarías a bebé Hitler?",
-    "Lo divertido de una montaña rusa, es la posibilidad de morir?",
-    "¿Cuándo es que el humanos e interesó en secreciones de otros animales?",
-    "Si pinocho dice que le va a crecer la nariz, le crece?"
+    "Lo divertido de una montaña rusa, ¿es la posibilidad de morir?",
+    "¿Cuándo es que el humano se interesó en secreciones de otros animales?",
+    "Si pinocho dice que le va a crecer la nariz, le crece?",
+    "¿Cuál es tu derecho humano favorito?",
+    "El himno nacional está muy bélico, no?",
+    "Mañana desaparece todo tipo de animal, ¿aceptarías la legalización del canibalismo?",
+    "Nadie es 100% hetero",
+    "Confirman visita alienígena, ¿sigues con tu vida, tal como está?",
+    "Vas en el metro, se cierran las puertas, y cuando está empezando a avanzar ves a una persona idéntica a ti en el andén..."
 ];
 
 const revealNewOpinion = () => {
