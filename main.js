@@ -120,7 +120,6 @@ const hotTakes = [
     "¿Cuál es tu derecho humano favorito?",
     "El himno nacional está muy bélico, no?",
     "Mañana desaparece todo tipo de animal, ¿aceptarías la legalización del canibalismo?",
-    "Nadie es 100% hetero",
     "Confirman visita alienígena, ¿sigues con tu vida, tal como está?",
     "Vas en el metro, se cierran las puertas, y cuando está empezando a avanzar ves a una persona idéntica a ti en el andén..."
 ];
